@@ -1,11 +1,12 @@
-const Sequelize = require('sequelize')
-const sequelize = require('../sequelize')
+const Sequelize = require("sequelize")
+const sequelize = require("../sequelize")
 
-
-const User = sequelize.define('user', {
+const User = sequelize.define("user", {
     id: {
-        type: Sequelize.NUMBER,
-        primaryKey: true
+        type: Sequelize.INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
+        allowNull: false
     },
     name: {
         type: Sequelize.STRING,
@@ -16,6 +17,10 @@ const User = sequelize.define('user', {
         allowNull: false
     },
     password: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    role: {
         type: Sequelize.STRING,
         allowNull: false
     }
